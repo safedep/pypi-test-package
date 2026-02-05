@@ -1,0 +1,13 @@
+# Packaging artifacts
+dist/
+build/
+src/*.egg-info/
+*.egg-info/
+
+# Python bytecode/cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/

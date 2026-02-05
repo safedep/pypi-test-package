@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safedep-test-pkg"
+dynamic = ["version"]
+description = "Empty test package for PyPI registry testing"
+readme = "README.md"
+requires-python = ">=3.7"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = { attr = "safedep_test_pkg.__version__" }
