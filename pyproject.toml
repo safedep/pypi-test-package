@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -15,5 +15,8 @@ package-dir = {"" = "src"}
 [tool.setuptools.packages.find]
 where = ["src"]
 
-[tool.setuptools.dynamic]
-version = { attr = "safedep_test_pkg.__version__" }
+[tool.setuptools_scm]
+# Write a generated version file for runtime __version__
+write_to = "src/safedep_test_pkg/_version.py"
+# Match tags like v0.0.4
+tag_regex = '^v(?P<version>\d+\.\d+\.\d+)$'
